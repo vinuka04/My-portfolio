@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🕸 My Spider-Man Portfolio</title>
+    <link rel="stylesheet" href="spidy.css">
+    <link rel="stylesheet" href="lamp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <h1 class="logo">🕷 VIki</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#current">Current</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    
+        <input type="text" placeholder="Search (e.g. Skills)..." name="text" class="input" id="navSearch">
+    </nav>
+        <button id="backToTop" title="Go to top">
+  <span class="web-icon">🕸️</span>
+</button>
+    <section id="home" class="hero">
+        <svg aria-label="loader" height="56px" width="56px" viewBox="0 0 56 56" class="loader">
+            </svg>
+
+        <h2>Hello, I'm <span>Vinuka Dilnath 🕸</span></h2>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <p>
+                    Hello! I’m Vinuka Dilnath, A Computer Science student at NSBM Green University.
+                    I enjoy turning ideas into functional projects using Python, HTML, CSS, C, and C#.
+                </p>
+            </div>
+            <div class="hero-image">
+                <img src="me1.jpg" alt="My CV" class="cv-img">
+            </div>
+        </div>
+        <a href="myCV.png" download class="btn">SHOW MY CV</a>
+    </section>
+
+    <section id="skills">
+        <div class="loader">
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__ball"></div>
+        </div>
+        <br>
+        <h2>🕷 Skills</h2>
+        <div class="cards">
+            <div class="card">HTML</div>
+            <div class="card">CSS</div>
+            <div class="card">JavaScript</div>
+            <div class="card">UI Design</div>
+            <div class="card">Problem Solving</div>
+        </div>
+    </section>
+
+    <section id="work">
+        <div class="loader">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <h2>🏆 Work Samples & Achievements</h2>
+        <div class="cards">
+            <div class="card"><h3>Portfolio Website</h3><p>My first responsive website.</p></div>
+            <div class="card"><h3>Landing Page</h3><p>Modern UI with animations.</p></div>
+            <div class="card"><h3>Award</h3><p>Best Student Project 2024</p></div>
+        </div>
+    </section>
+
+    <section id="current">
+        <h2>🚀 Current Works</h2>
+        <p>I'm currently learning advanced JavaScript and improving my UI/UX skills.</p>
+    </section>
+
+    <section id="contact">
+        <h2>📩 Contact Me</h2>
+        <p>Email: dilnathvinuka@email.com</p>
+        <p>Phone: +94 71 760 8654</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Vinuka Dilnath | Spider-Man Theme</p>
+    </footer>
+
+    <script>
+    const searchInput = document.getElementById('navSearch');
+
+    searchInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            const query = searchInput.value.toLowerCase().trim();
+            
+            // Define your targets
+            const targets = [
+                { id: 'home', keys: ['home', 'bio', 'main', 'start'] },
+                { id: 'skills', keys: ['skills', 'tech', 'coding', 'languages', 'html', 'css'] },
+                { id: 'work', keys: ['work', 'projects', 'achievements', 'awards', 'portfolio'] },
+                { id: 'current', keys: ['current', 'learning', 'now', 'updates'] },
+                { id: 'contact', keys: ['contact', 'email', 'social', 'hire', 'phone'] }
+            ];
+
+            // Find if the query matches any of the keys
+            const found = targets.find(target => 
+                target.keys.some(key => key.includes(query))
+            );
+
+            if (found) {
+                document.getElementById(found.id).scrollIntoView({ behavior: 'smooth' });
+                searchInput.value = ""; // Clear the bar
+            } else {
+                alert("Spider-Sense says: Section not found!");
+            }
+        }
+    });
+    const backBtn = document.getElementById("backToTop");
+
+// When the user scrolls down 300px from the top, show the button
+window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backBtn.style.display = "block";
+    } else {
+        backBtn.style.display = "none";
+    }
+};
+
+// When the user clicks, scroll to the top smoothly
+backBtn.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+</script>
+</body>
+</html>
